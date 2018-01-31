@@ -2,6 +2,45 @@
   text-align: center;
 }
 
+.App h1 {
+  color: gray;
+  z-index: 99;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+}
+
+.App form {
+  margin-top: 10%;
+  z-index: 99;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.App button {
+  display: block;
+    padding: 2%;
+    width: 200px;
+    color: black;
+    margin: auto;
+    background: #7ad8dc;
+    font-size: 20px;
+}
+
+label {
+  font-size: 30px;
+}
+
+input {
+  margin-bottom: 2%;
+  padding-left: 11%;
+  padding: 1%;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -18,11 +57,25 @@
   font-size: 1.5em;
 }
 
+.background {
+  background: url('https://www.mexicanbusinessweb.mx/wp-content/uploads/2016/03/PMA-PMC.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 700px;
+  width: 100%;
+  margin-top: -100px;
+  opacity: 0.3;
+}
+
 .App-intro {
   font-size: large;
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
