@@ -16,7 +16,13 @@ class QR(Resource):
         parser.add_argument('name', type=str, required=True)
         parser.add_argument('email', type=str, required=True)
         parser.add_argument('career', type=str, required=True)
+        parser.add_argument('workshop', type=str, required=True)
+        parser.add_argument('visit', type=str, required=True)
+    
+
+
         args = parser.parse_args()
+        print(args)
 
         status = 500
 
@@ -34,7 +40,7 @@ class QR(Resource):
                     recipients=[student["email"]],
                     html=render_template("confirmation.html",
                     data=student),
-                    subject="Congreso de Negocios y Economia")
+                    subject="Congreso de Industrial")
         with app.open_resource("%s" % img_name) as fp:
             msg.attach("%s" % img_name, "image/png", fp.read())
 

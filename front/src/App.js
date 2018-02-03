@@ -34,7 +34,7 @@ class App extends Component {
     return (<div className="App">
 
       <h1>
-        Congreso de Economía, Banca e Inversiones
+        XXIX Congreso de Ingeniería Industrial
       </h1>
 
       <form onSubmit={(e) => this.handleSubmit(e)}>
@@ -57,6 +57,16 @@ class App extends Component {
           Correo:
           <input name="email" type="text" required="required"/>
         </label>
+          <br/>
+          <label>
+            Taller:
+            <input name="email" type="text" required="required"/>
+          </label>
+          <br/>
+          <label>
+            Visita empresarial:
+            <input name="email" type="text" required="required"/>
+          </label>
         <button type="submit">
           Registrar
         </button>

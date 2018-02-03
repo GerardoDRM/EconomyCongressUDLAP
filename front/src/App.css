@@ -25,9 +25,9 @@
   display: block;
     padding: 2%;
     width: 200px;
-    color: black;
+    color: white;
     margin: auto;
-    background: #7ad8dc;
+    background: #768d8e;
     font-size: 20px;
 }
 
@@ -58,12 +58,12 @@ input {
 }
 
 .background {
-  background: url('https://www.mexicanbusinessweb.mx/wp-content/uploads/2016/03/PMA-PMC.jpg');
+  background: url('/capture.png');
   background-size: cover;
   background-position: center;
   height: 700px;
   width: 100%;
-  margin-top: -100px;
+  margin-top: -0px;
   opacity: 0.3;
 }
 
