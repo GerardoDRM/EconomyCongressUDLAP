@@ -18,11 +18,10 @@ class QR(Resource):
         parser.add_argument('career', type=str, required=True)
         parser.add_argument('workshop', type=str, required=True)
         parser.add_argument('visit', type=str, required=True)
-    
+
 
 
         args = parser.parse_args()
-        print(args)
 
         status = 500
 

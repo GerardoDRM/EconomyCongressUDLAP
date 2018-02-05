@@ -60,12 +60,12 @@ class App extends Component {
           <br/>
           <label>
             Taller:
-            <input name="email" type="text" required="required"/>
+            <input name="workshop" type="text" required="required"/>
           </label>
           <br/>
           <label>
             Visita empresarial:
-            <input name="email" type="text" required="required"/>
+            <input name="visit" type="text" required="required"/>
           </label>
         <button type="submit">
           Registrar
