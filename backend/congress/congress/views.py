@@ -16,6 +16,7 @@ class QR(Resource):
         parser.add_argument('name', type=str, required=True)
         parser.add_argument('email', type=str, required=True)
         parser.add_argument('career', type=str, required=True)
+        parser.add_argument('number', type=str, required=True)
         args = parser.parse_args()
 
         status = 500

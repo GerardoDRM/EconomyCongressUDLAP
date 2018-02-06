@@ -57,6 +57,11 @@ class App extends Component {
           Correo:
           <input name="email" type="text" required="required"/>
         </label>
+        <br/>
+        <label>
+          Folio:
+          <input name="number" type="text" required="required"/>
+        </label>
         <button type="submit">
           Registrar
         </button>
