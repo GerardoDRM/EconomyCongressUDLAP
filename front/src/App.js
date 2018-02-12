@@ -9,8 +9,9 @@ class App extends Component {
     super(props);
   }
 
+
   handleSubmit(e) {
-  //  e.preventDefault()
+   e.preventDefault()
     const values = serializeForm(e.target, {hash: true})
 
     var formBody = [];
@@ -23,8 +24,10 @@ class App extends Component {
 
     // Use Books api to update shelf status
     CongressApi.create(formBody).then(function(response) {
+      document.getElementById("form").reset();
       console.log(response)
     }).catch(function(response) {
+      document.getElementById("form").reset();
       console.log(response)
     })
 
@@ -37,7 +40,7 @@ class App extends Component {
         XXIX Congreso de Ingeniería Industrial
       </h1>
 
-      <form onSubmit={(e) => this.handleSubmit(e)}>
+      <form id="form" onSubmit={(e) => this.handleSubmit(e)}>
         <label>
           ID:
           <input name="id" type="text" required="required"/>
