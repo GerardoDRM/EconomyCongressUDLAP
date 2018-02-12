@@ -1,94 +1,75 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
-
-
+import serializeForm from 'form-serialize';
+import * as CongressApi from './CongressApi'
 import './App.css';
 
 class App extends Component {
   constructor(props) {
-  super(props);
-  this.state = {
-    isGoing: true,
-    numberOfGuests: 2
-  };
+    super(props);
+  }
 
-  this.handleInputChange = this.handleInputChange.bind(this);
-}
+  handleSubmit(e) {
+    e.preventDefault()
+    const values = serializeForm(e.target, {hash: true})
 
-handleInputChange(event) {
-  const target = event.target;
-  const value = target.type === 'checkbox' ? target.checked : target.value;
-  const name = target.name;
+    var formBody = [];
+    for (var property in values) {
+      var encodedKey = encodeURIComponent(property);
+      var encodedValue = encodeURIComponent(values[property]);
+      formBody.push(encodedKey + "=" + encodedValue);
+    }
+    formBody = formBody.join("&");
 
-  this.setState({
-    [name]: value
-  });
-}
-
-
-
-  sending = () => {
-
-    console.log("ok")
-}
-
-  submitInfo = () => {
+    // Use Books api to update shelf status
+    CongressApi.create(formBody).then(function(response) {
+      console.log(response)
+    }).catch(function(response) {
+      console.log(response)
+    })
 
   }
 
   render() {
-    return (
-      <div className="App">
+    return (<div className="App">
 
-      <h1> Congreso de Economía, Banca e Inversiones </h1>
+      <h1>
+        Congreso de Economía, Banca e Inversiones
+      </h1>
 
-      <form>
-   <label>
-    Nombre:
-     <input
-       name="name"
-       type="text"
-       checked={this.state.isGoing}
-       onChange={this.handleInputChange} />
-   </label>
-   <br />
-   <label>
-        Carrera:
-     <input
-       name="career"
-       type="text"
-    
-       onChange={this.handleInputChange} />
-   </label>
-   <br />
-   <label>
-        Semestre:
-     <input
-       name="semester"
-       type="text"
+      <form onSubmit={(e) => this.handleSubmit(e)}>
+        <label>
+          ID:
+          <input name="id" type="text" required="required"/>
+        </label>
+        <br/>
+        <label>
+          Nombre:
+          <input name="name" type="text" required="required"/>
+        </label>
+        <br/>
+        <label>
+          Carrera:
+          <input name="career" type="text" required="required"/>
+        </label>
+        <br/>
+        <label>
+          Correo:
+          <input name="email" type="text" required="required"/>
+        </label>
+        <br/>
+        <label>
+          Folio:
+          <input name="number" type="text" required="required"/>
+        </label>
+        <button type="submit">
+          Registrar
+        </button>
+      </form>
 
-       onChange={this.handleInputChange} />
-   </label>
-   <br />
-   <label>
-        Correo:
-     <input
-       name="email"
-       type="text"
+      <div className="background"></div>
 
-       onChange={this.handleInputChange} />
-   </label>
-   <button> Registrar </button>
- </form>
-
- <div className="background">
-
-  </div>
-
-      </div>
-
-
-    );
+    </div>);
   }
 }
 
