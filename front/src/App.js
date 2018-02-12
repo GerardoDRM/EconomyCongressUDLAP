@@ -10,7 +10,7 @@ class App extends Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault()
+  //  e.preventDefault()
     const values = serializeForm(e.target, {hash: true})
 
     var formBody = [];
