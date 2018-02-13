@@ -35,7 +35,7 @@ class QR(Resource):
                     recipients=[student["email"]],
                     html=render_template("confirmation.html",
                     data=student),
-                    subject="Congreso de Negocios y Economia")
+                    subject="Primer congreso de Economía, Banca y Finanzas")
         with app.open_resource("%s" % img_name) as fp:
             msg.attach("%s" % img_name, "image/png", fp.read())
 
